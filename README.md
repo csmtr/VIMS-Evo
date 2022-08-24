@@ -56,6 +56,6 @@ V Indefinite Modding Suite Evolved (VIMS Evo).
 
 Contributor: kirill_mapper#2951	<<<<< ( **My code base starts from here!** )
 
-Developer & Mantainer: cosmitir#0099
+Developer & Maintainer: cosmitir#0099
 
 Supporters: Modding community! 💜
