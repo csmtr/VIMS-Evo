@@ -7,8 +7,6 @@ V Indefinite Modding Suite Evolved (VIMS Evo).
 <br>
 <br>
 
----
-
 ## Requirements
 
 <br>
@@ -26,8 +24,6 @@ V Indefinite Modding Suite Evolved (VIMS Evo).
 
 <br>
 <br>
-
----
 
 ## Installation
 
