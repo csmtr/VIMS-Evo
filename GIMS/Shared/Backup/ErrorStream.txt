@@ -1,0 +1,100 @@
+"[ERROR]
+-- Unknown property: "y" in undefined
+[STACK]
+ **	thread data: threadID:28816
+ **	------------------------------------------------------
+ **	[stack level: 0]
+ **	In InitMainWindow(); filename: C:\Users\HumanBox\AppData\Local\GIMS\Shared\Files\00_Core.ms; position: 397962; line: 10599
+ **	member of: StructDef:GUIMgrstr
+ **	------------------------------------------------------
+ **	[stack level: 1]
+ **	called from ReInitMainWindow(); filename: C:\Users\HumanBox\AppData\Local\GIMS\Shared\Files\00_Core.ms; position: 395898; line: 10567
+ **	member of: StructDef:GUIMgrstr
+ **	------------------------------------------------------
+ **	[stack level: 2]
+ **	called from ExceptionHandler(); filename: C:\Users\HumanBox\AppData\Local\GIMS\Shared\Files\00_Core.ms; position: 481267; line: 12584
+ **	member of: StructDef:SystemMgrstr
+ **	------------------------------------------------------
+ **	[stack level: 3]
+ **	called from EGIMS_EHReport(); filename: C:\Users\HumanBox\AppData\Local\GIMS\Shared\Files\00_Core.ms; position: 26128; line: 812
+ **	member of: anonymous codeblock
+ **	------------------------------------------------------
+ **	[stack level: 4]
+ **	called from ReInitMainWindow(); filename: C:\Users\HumanBox\AppData\Local\GIMS\Shared\Files\00_Core.ms; position: 396138; line: 10568
+ **	member of: StructDef:GUIMgrstr
+ **	------------------------------------------------------
+ **	[stack level: 5]
+ **	called from ExceptionHandler(); filename: C:\Users\HumanBox\AppData\Local\GIMS\Shared\Files\00_Core.ms; position: 481267; line: 12584
+ **	member of: StructDef:SystemMgrstr
+ **	------------------------------------------------------
+ **	[stack level: 6]
+ **	called from EGIMS_EHReport(); filename: C:\Users\HumanBox\AppData\Local\GIMS\Shared\Files\00_Core.ms; position: 26128; line: 812
+ **	member of: anonymous codeblock
+ **	------------------------------------------------------
+ **	[stack level: 7]
+ **	called from ReInitMainWindow(); filename: C:\Users\HumanBox\AppData\Local\GIMS\Shared\Files\00_Core.ms; position: 396138; line: 10568
+ **	member of: StructDef:GUIMgrstr
+ **	------------------------------------------------------
+ **	[stack level: 8]
+ **	called from ExceptionHandler(); filename: C:\Users\HumanBox\AppData\Local\GIMS\Shared\Files\00_Core.ms; position: 481267; line: 12584
+ **	member of: StructDef:SystemMgrstr
+ **	------------------------------------------------------
+ **	[stack level: 9]
+ **	called from EGIMS_EHReport(); filename: C:\Users\HumanBox\AppData\Local\GIMS\Shared\Files\00_Core.ms; position: 26128; line: 812
+ **	member of: anonymous codeblock
+ **	------------------------------------------------------
+ **	[stack level: 10]
+ **	called from ReInitMainWindow(); filename: C:\Users\HumanBox\AppData\Local\GIMS\Shared\Files\00_Core.ms; position: 396138; line: 10568
+ **	member of: StructDef:GUIMgrstr
+ **	------------------------------------------------------
+ **	[stack level: 11]
+ **	called from ExceptionHandler(); filename: C:\Users\HumanBox\AppData\Local\GIMS\Shared\Files\00_Core.ms; position: 481267; line: 12584
+ **	member of: StructDef:SystemMgrstr
+ **	------------------------------------------------------
+ **	[stack level: 12]
+ **	called from EGIMS_EHReport(); filename: C:\Users\HumanBox\AppData\Local\GIMS\Shared\Files\00_Core.ms; position: 26128; line: 812
+ **	member of: anonymous codeblock
+ **	------------------------------------------------------
+ **	[stack level: 13]
+ **	called from ReInitMainWindow(); filename: C:\Users\HumanBox\AppData\Local\GIMS\Shared\Files\00_Core.ms; position: 396138; line: 10568
+ **	member of: StructDef:GUIMgrstr
+ **	------------------------------------------------------
+ **	[stack level: 14]
+ **	called from ExceptionHandler(); filename: C:\Users\HumanBox\AppData\Local\GIMS\Shared\Files\00_Core.ms; position: 481267; line: 12584
+ **	member of: StructDef:SystemMgrstr
+ **	------------------------------------------------------
+ **	[stack level: 15]
+ **	called from EGIMS_EHReport(); filename: C:\Users\HumanBox\AppData\Local\GIMS\Shared\Files\00_Core.ms; position: 26128; line: 812
+ **	member of: anonymous codeblock
+ **	------------------------------------------------------
+ **	[stack level: 16]
+ **	called from ReInitMainWindow(); filename: C:\Users\HumanBox\AppData\Local\GIMS\Shared\Files\00_Core.ms; position: 396138; line: 10568
+ **	member of: StructDef:GUIMgrstr
+ **	------------------------------------------------------
+ **	[stack level: 17]
+ **	called from ExceptionHandler(); filename: C:\Users\HumanBox\AppData\Local\GIMS\Shared\Files\00_Core.ms; position: 481267; line: 12584
+ **	member of: StructDef:SystemMgrstr
+ **	------------------------------------------------------
+ **	[stack level: 18]
+ **	called from EGIMS_EHReport(); filename: C:\Users\HumanBox\AppData\Local\GIMS\Shared\Files\00_Core.ms; position: 26128; line: 812
+ **	member of: anonymous codeblock
+ **	------------------------------------------------------
+ **	[stack level: 19]
+ **	called from ReInitMainWindow(); filename: C:\Users\HumanBox\AppData\Local\GIMS\Shared\Files\00_Core.ms; position: 396138; line: 10568
+ **	member of: StructDef:GUIMgrstr
+ **	------------------------------------------------------
+ **	[stack level: 20]
+ **	called from ExceptionHandler(); filename: C:\Users\HumanBox\AppData\Local\GIMS\Shared\Files\00_Core.ms; position: 481267; line: 12584
+ **	member of: StructDef:SystemMgrstr
+ **	------------------------------------------------------
+ **	[stack level: 21]
+ **	called from EGIMS_EHReport(); filename: C:\Users\HumanBox\AppData\Local\GIMS\Shared\Files\00_Core.ms; position: 26128; line: 812
+ **	member of: anonymous codeblock
+ **	------------------------------------------------------
+ **	[stack level: 22]
+ **	called from InfoButton.pressed()
+ **	member of: Rollout:uEvoGIMS
+ **	------------------------------------------------------
+ **	[stack level: 23]
+ **	called from top-level
+"

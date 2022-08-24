@@ -914,4 +914,4 @@ if HiddenDOSCommand != undefined then (
 )
 OK
 endTime = timeStamp()
-print ( "GIMS took " + ( ( ( endTime - startTime ) / 1000.0 ) as string ) + " seconds." )
+print ( "GIMS took " + ( ( ( endTime - startTime ) / 1000.0 ) as string ) + " seconds to load." )
