@@ -1,1 +1,11 @@
-GIMS/MaterialData/*.dat
+# material data r* property
+GIMS/MaterialData/*
+
+# shared local
+GIMS/Shared/Backup/*
+GIMS/Shared/Cache/*
+
+# gta v local
+GIMS/V/Backup/*
+GIMS/V/Cache/*
+GIMS/V/Paths.txt
