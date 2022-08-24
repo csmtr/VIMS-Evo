@@ -7,6 +7,8 @@ V Indefinite Modding Suite Evolved (VIMS Evo).
   - Versions `0.X`, are usable but i can't guarantee they are 100% stable. Before `1.X` release every version means I don't fully understand GIMS Evo code.
   - You can help me with this by commenting your ideas on the code. Let's give it a challenge to everyone.
 
+I won't promise any new feature! This is a fun project, I'm just trying to help those who are used to GIMS Evo or 3ds Max. There is already other tools that are much more moddern and at a great active development by the community, like [Sollumz](https://github.com/Skylumz/Sollumz) for Blender. I **do not want** anyone to see this as competition, for my personal dayly use, I choose Sollumz and I don't compare both, these are made by the community for the community.
+
 <br>
 <br>
 
@@ -47,8 +49,8 @@ V Indefinite Modding Suite Evolved (VIMS Evo).
 <br>
 
 - [ ] Document and understand all GIMS code.
-- [ ] 
-- [ ] Create a TODO List!
+- [ ] \(**PRIORITY**) Find out what's slowing down exports.
+- [ ] Create a better TODO List!
 
 <br>
 <br>
