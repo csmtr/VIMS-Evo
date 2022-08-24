@@ -1,5 +1,0 @@
-(
-GIMS.Core.strRules \
-DefaultMaterialPropMapping:#(#Diffuse,#diffuseMap) \
-GATelemetryEnabled:true \
-)
