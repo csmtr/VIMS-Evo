@@ -50,6 +50,7 @@ I won't promise any new feature! This is a fun project, I'm just trying to help 
 
 - [ ] Document and understand all GIMS code.
 - [ ] \(**PRIORITY**) Find out what's slowing down exports.
+- [ ] Clean up everything.
 - [ ] Create a better TODO List!
 
 <br>
