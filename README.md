@@ -29,7 +29,7 @@ V Indefinite Modding Suite Evolved (VIMS Evo).
 
 <br>
 
-1. Download the latest [release](https://github.com/cosmitir/VIMS-Evo/releases).
+1. Download the latest [release](https://github.com/cosmitir/VIMS-Evo/releases/latest/).
 2. Drag the `scripts` folder to your 3ds Max directory. ( Default: "C: \ Program Files \ Autodesk \ 3ds Max XXXX \", where XXXX stands for the version... i.e.: 2022 )
 3. Drag the `GIMS` folder to Local AppData folder. ( Win + R > %localappdata% )
 4. Get `materialfx.dat` and `materials.dat` with help of [CodeWalker](https://github.com/dexyfex/CodeWalker) or OpenIV.
@@ -43,6 +43,8 @@ V Indefinite Modding Suite Evolved (VIMS Evo).
 
 <br>
 
+- [ ] Document and understand all GIMS code.
+- [ ] 
 - [ ] Create a TODO List!
 
 <br>
