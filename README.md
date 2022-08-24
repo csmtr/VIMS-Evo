@@ -4,6 +4,9 @@ V Indefinite Modding Suite Evolved (VIMS Evo).
 
 "V" from Grand Theft Auto V
 
+  - Versions `0.X`, are usable but i can't guarantee they are 100% stable. Before `1.X` release every version means I don't fully understand GIMS Evo code.
+  - You can help me with this by commenting your ideas on the code. Let's give it a challenge to everyone.
+
 <br>
 <br>
 
