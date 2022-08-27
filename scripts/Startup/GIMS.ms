@@ -26,8 +26,7 @@ if HiddenDOSCommand != undefined then (
 					local	Result = false
 					for i = 1 to 3 while not Result do (
 						Result = (
-							( DeleteFile FilePath ) and
-							( not ( DoesFileExist FilePath ) )
+							( DeleteFile FilePath ) and ( not ( DoesFileExist FilePath ) )
 						)
 					)
 					if not Result then (
@@ -35,12 +34,8 @@ if HiddenDOSCommand != undefined then (
 						Result = ( not ( DoesFileExist FilePath ) )
 					)
 					Result
-				) else (
-					true
-				)
-			) catch (
-				false
-			)
+				) else ( true )
+			) catch ( false )
 		),
 		
 		fn FileRename SourcePath TargetPath = (
@@ -65,14 +60,11 @@ if HiddenDOSCommand != undefined then (
 							)
 						)
 						Result
-					) else
-					false
-				) else
-				false
-			) catch (
-				false
-			)
+					) else ( false )
+				) else ( false )
+			) catch ( false )
 		),
+
 		fn FileCopy SourcePath TargetPath = (
 			try (
 				if ( DoesFileExist SourcePath ) then (
@@ -95,19 +87,13 @@ if HiddenDOSCommand != undefined then (
 							)
 						)
 						Result
-					) else (
-						false
-					)
-				) else (
-					false
-				)
-			) catch (
-				false
-			)
+					) else ( false )
+				) else ( false )
+			) catch ( false )
 		),
+
 		fn Start Game NoEH:false = (
-			/*@<GUIDE>
-				Creates all core related directories.
+			/* Creates all core related directories.
 				If core launcher's found by (FilesPath + GIMS.CoreFile) path, calling it with <MXSFunction> FileIn, thereby loading the core.
 				Otherwise:
 				-Deletes all core related files, 
@@ -140,13 +126,10 @@ if HiddenDOSCommand != undefined then (
 				) else (
 					Loaded = false
 					local	Files = (
-						if GIMS.IsDevBuild then
-						#( )
-						else (
-							GetFiles ( FilesPath + StarChar ) +
-							GetFiles ( CachePath + StarChar ) +
-							GetFiles ( ResourceCachePath + StarChar )
+						if ( GIMS.IsDevBuild ) then (
+							#( )
 						)
+						else ( GetFiles ( FilesPath + StarChar ) + GetFiles ( CachePath + StarChar ) + GetFiles ( ResourceCachePath + StarChar ) )
 					)
 					for tFile in Files do
 					DeleteFile tFile
@@ -164,23 +147,16 @@ if HiddenDOSCommand != undefined then (
 								Default: (
 									try (
 										Result = ( CoreLoader true )
-									) catch (
-										messageBox ( "Line: 193 - Can't load the " + ( Name as String ) + " core. Exception: " + GetCurrentException() ) title:"GIMS Error:" beep:true
-									)
+									) catch ( messageBox ( "Line: 193 - Can't load the " + ( Name as String ) + " core. Exception: " + GetCurrentException() ) title:"GIMS Error:" beep:true )
 								)
 							)
-						) catch (
-							messageBox ( "Line: 198 - Can't compile the " + ( Name as String ) + " core. Exception: " + GetCurrentException() ) title:"GIMS Error:" beep:true
-						)
+						) catch ( messageBox ( "Line: 198 - Can't compile the " + ( Name as String ) + " core. Exception: " + GetCurrentException() ) title:"GIMS Error:" beep:true )
 					) else (
 						messageBox ( "Line: 201 - Failed to download the " + ( Name as String ) + " core." ) title:"GIMS Error:" beep:true
 						Free URL
 					)
 				)
-			) else (
-				messageBox ( "Line: 206 - Failed to create folders." ) title:"GIMS Error:" beep:true
-			)
-			
+			) else ( messageBox ( "Line: 206 - Failed to create folders." ) title:"GIMS Error:" beep:true )
 			
 			Loaded = ( Result == true )
 			Result
@@ -192,20 +168,17 @@ if HiddenDOSCommand != undefined then (
 			try (
 				if ( ServerURL == undefined ) then (
 					ServerURL = GIMS.ServerURL
-				) else (
-					GIMS.ServerURL = ServerURL
-				)
+				) else ( GIMS.ServerURL = ServerURL )
 				BasePath = ( Append ( GIMS.GIMSPath + ( Tag as String ) ) "/" )
 				FilesPath = ( BasePath + GIMS.FilesDir )
 				BackupPath = ( BasePath + GIMS.BackupDir )
 				CachePath = ( BasePath + GIMS.CacheDir )
 				ResourceCachePath = ( CachePath + GIMS.ResourceCacheDir )
 				DownloadPath = ( BasePath + GIMS.DownloadDir )
-			) catch (
-				messageBox ( "Line: 232 - Exception: " + GetCurrentException() ) title:"GIMS Error:" beep:true
-			)
+			) catch ( messageBox ( "Line: 232 - Exception: " + GetCurrentException() ) title:"GIMS Error:" beep:true )
 		)
 	)
+
 	struct GameCore (
 		Tag = "NONE",
 		Name = "NONE",
@@ -229,63 +202,17 @@ if HiddenDOSCommand != undefined then (
 				Loaded = false
 				Installed = ( DoesFileExist ( FilesPath + GIMS.CoreFile ) )
 				Core = undefined
-			) catch (
-				messageBox ( "Line: 254 - Exception: " + GetCurrentException() ) title:"GIMS Error:" beep:true
-			)
+			) catch ( messageBox ( "Line: 254 - Exception: " + GetCurrentException() ) title:"GIMS Error:" beep:true )
 		),
 
 		fn UnInstall = (
-			local	StarChar = "*",
-			Files = (
-				if ( GIMS.IsDevBuild ) then (
-					#( )
-				) else (
-					GetFiles ( FilesPath + StarChar ) +
-					GetFiles ( CachePath + StarChar ) +
-					GetFiles ( ResourceCachePath + StarChar ) +
-					GetFiles ( DownloadPath + StarChar )
-				)
-			)
-			for tFile in Files do
-			DeleteFile tFile
+			messageBox ( "Line: 238 - UnInstall function called, report the steps on https://github.com/cosmitir/VIMS-Evo" ) title:"GIMS Warn:" beep:true
 			Init GIMS
 		),
 
 		fn Install Game = (
-			local Result = false,
-			CoreFile = GIMS.CoreFile
-			try (
-				GIMS.CurrentGame = Game
-				UnInstall()
-				if (
-					MakeDir BasePath All:true and
-					MakeDir FilesPath All:true and
-					MakeDir BackupPath All:true and
-					MakeDir DownloadPath All:true and
-					MakeDir CachePath All:true and
-					MakeDir ResourceCachePath All:true
-				) then (
-					local	URL = ( StringStream "" )
-					Format "%%/%%" ServerURL Tag GIMS.FilesDir CoreFile To:URL
-					if ( GIMS.Download #( URL as String ) DownloadPath true ) then (
-						try (
-							FileIn ( DownloadPath + CoreFile ) Quiet:true
-							try (
-								Result = ( GIMS.CoreLoader true )
-							) catch (
-								messageBox ( "Line: 341 - Can't load the " + ( Name as String ) + " core. Exception: " + GetCurrentException() ) title:"GIMS Error:" beep:true
-							)
-						) catch (
-							messageBox ( "Line: 344 - Can't compile the " + ( Name as String ) + " core. Exception: " + GetCurrentException() ) title:"GIMS Error:" beep:true
-						)
-					) else
-					messageBox ( "Line: 347 - Failed to download the " + ( Name as String ) + " core." ) title:"GIMS Error:" beep:true
-					Free URL
-				) else
-				messageBox ( "Line: 350 - Failed to create folders." ) title:"GIMS Error:" beep:true
-			) catch (
-				messageBox ( "Line: 352 - Can't install the " + ( Name as String ) + " core. Exception: " + GetCurrentException() ) title:"GIMS Error:" beep:true
-			)
+			messageBox ( "Line: 243 - Install function called, report the steps on https://github.com/cosmitir/VIMS-Evo" ) title:"GIMS Warn:" beep:true
+			local Result = false
 			Loaded = Result
 			Installed = Result
 			Result
@@ -295,15 +222,7 @@ if HiddenDOSCommand != undefined then (
 			local Result = false
 			try (
 				GIMS.CurrentGame = Game
-
-				if (
-					MakeDir BasePath All:true and
-					MakeDir FilesPath All:true and
-					MakeDir BackupPath All:true and
-					MakeDir DownloadPath All:true and
-					MakeDir CachePath All:true and
-					MakeDir ResourceCachePath All:true
-				) then (
+				if ( MakeDir BasePath All:true and MakeDir FilesPath All:true and MakeDir BackupPath All:true and MakeDir DownloadPath All:true and MakeDir CachePath All:true and MakeDir ResourceCachePath All:true ) then (
 					local	CoreFile = ( FilesPath + GIMS.CoreFile )
 					if ( DoesFileExist CoreFile ) then (
 						try (
@@ -316,43 +235,41 @@ if HiddenDOSCommand != undefined then (
 								Core = undefined
 								messageBox ( "Line: 389 - Can't load the " + ( Name as String ) + " core. Exception: " + GetCurrentException() ) title:"GIMS Error:" beep:true
 							)
-						) catch (
-							messageBox ( "Line: 392 - Can't compile the " + ( Name as String ) + " core. Exception: " + GetCurrentException() ) title:"GIMS Error:" beep:true
-						)
-					) else
-					Result = ( Install Game )
-				) else
-				messageBox ( "Line: 397 - Failed to create folders." ) title:"GIMS Error:" beep:true
+						) catch ( messageBox ( "Line: 392 - Can't compile the " + ( Name as String ) + " core. Exception: " + GetCurrentException() ) title:"GIMS Error:" beep:true )
+					) else ( Result = ( Install Game ) )
+				) else ( messageBox ( "Line: 397 - Failed to create folders." ) title:"GIMS Error:" beep:true )
 			) catch (
-				if NoEH then
-				throw()
+				if ( NoEH ) then ( throw() )
 				messageBox ( "Line: 401 - Can't start the " + ( Name as String ) + " core. Exception: " + GetCurrentException() ) title:"GIMS Error:" beep:true
 			)
+
 			Loaded = Result
 			Result
 		)
 	)
+
 	struct GUIFontTip (
 		Regular,
 		SemiBold
 	)
+
 	struct GUIFontBody (
 		Regular,
 		SemiBold
 	)
+
 	struct GUIFontSubHeader (
 		Regular,
 		Light
 	)
+
 	struct GUIFont (
 		Header,
 		SubHeader = GUIFontSubHeader(),
 		Body = GUIFontBody(),
 		Tip = GUIFontTip(),
-		/*@<Boolean>*/ fn Check = (
-			/*@<GUIDE>
-				Checks structure fields to be initialized properly
-			*/
+
+		fn Check = (
 			(
 				Header != undefined and
 				SubHeader.Regular != undefined and
@@ -364,6 +281,7 @@ if HiddenDOSCommand != undefined then (
 			)
 		)
 	)
+
 	struct GUIColour (
 		SDC,
 		CBlack,
@@ -374,10 +292,8 @@ if HiddenDOSCommand != undefined then (
 		Warning,
 		Transparent,
 		Info,
-		/*@<Boolean>*/ fn Check = (
-			/*@<GUIDE>
-				Checks structure fields to be initialized properly
-			*/
+
+		fn Check = (
 			(
 				SDC != undefined and
 				CBlack != undefined and
@@ -391,6 +307,7 @@ if HiddenDOSCommand != undefined then (
 			)
 		)
 	)
+
 	struct strGUI (
 		BitmapPath,
 		Images = #( #( ), #( ) ),
@@ -400,33 +317,28 @@ if HiddenDOSCommand != undefined then (
 		ScrollOrientation,
 		NameSeparator = "_",
 		ImageExt = ".png",
-		/*@<BitMap>*/ fn SaveBitMap /*@<BitMap>*/ TheBMP = (
-			/*@<GUIDE>
-				Saves the bitmap adnd opens it again.
+
+		fn SaveBitMap TheBMP = (
+			/* Saves the bitmap adnd opens it again.
 				returns the BitMap, or "undefined" if saving\opening failed.
 			*/
 			local	FileName = TheBMP.FileName
-			if FileName.Count == 0 then
-			throw "Can't Save the BitMap without a FileName"
+			if ( FileName.Count == 0 ) then ( throw "Can't Save the BitMap without a FileName" )
 			Save TheBMP Gamma:1
 			Close TheBMP
-			if not ( DoesFileExist FileName ) then
-			throw "Can't save the bitmap: " FileName
-			try
-			OpenBitmap FileName
-			catch
-			undefined
+			if ( not ( DoesFileExist FileName ) ) then ( throw "Can't save the bitmap: " FileName )
+			try ( OpenBitmap FileName ) catch ( undefined )
 		),
-		/*@<BitMap>*/ fn ResizeBitmap /*@<BitMap>*/ TheBMP /*@<Point2>*/ Size /*@<String>*/ FilePath:undefined DoSave:true = (
-			/*@<GUIDE>
-				Resizes the bitmap with using the parameter "Size".
+
+		fn ResizeBitmap TheBMP Size FilePath:undefined DoSave:true = (
+			/* Resizes the bitmap with using the parameter "Size".
 				Saves the bitmap to the path from "FilePath" parameter if it's defined, otherwise by the following formula:
 					<Shared core resource cache path>/R-G-B-A_WidthxHeight.png
 				returns the BitMap, or "undefined" if saving\opening failed.
 			*/
 			local	Width = Size.x,
 			Height = Size.y
-			if FilePath == undefined then (
+			if ( FilePath == undefined ) then (
 				local	SS = ( StringStream "" )
 				Format "%%_%x%.png" GIMS.Shared.ResourceCachePath ( GetHashValue TheBMP.FileName 0 ) Width Height To:SS
 				FilePath = ( SS as string )
@@ -434,21 +346,20 @@ if HiddenDOSCommand != undefined then (
 			)
 			local	ResizedBMP = ( BitMap Width Height FileName:FilePath )
 			Copy TheBMP ResizedBMP
-			if DoSave then
-			SaveBitmap ResizedBMP
-			else
-			ResizedBMP
+			if ( DoSave ) then (
+				SaveBitmap ResizedBMP
+			) else ( ResizedBMP )
 		),
-		/*@<BitMap>*/ fn CreateBitmap /*@<Point2>*/ Size:[8, 8] /*@<Color>*/ BackColor:Red /*@<String>*/ FilePath:undefined = (
-			/*@<GUIDE>
-				Creates the bitmap with given unnecessary parameters "Size"(Default's [8, 8]) and "BackColor"(Default's White).
+
+		fn CreateBitmap Size:[8, 8] BackColor:Red FilePath:undefined = (
+			/* Creates the bitmap with given unnecessary parameters "Size"(Default's [8, 8]) and "BackColor"(Default's White).
 				Saves the bitmap to the path from "FilePath" parameter if it's defined, otherwise by the following formula:
 					<Shared core resource cache path>/R-G-B-A_WidthxHeight.png
 				returns the BitMap, or "undefined" if saving\opening failed.
 			*/
 			local	Width = Size.x,
 			Height = Size.y
-			if FilePath == undefined then (
+			if ( FilePath == undefined ) then (
 				local	SS = ( StringStream "" )
 				Format "%%-%-%-%_%x%.png" \
 				GIMS.Shared.ResourceCachePath \
@@ -464,9 +375,9 @@ if HiddenDOSCommand != undefined then (
 			)
 			SaveBitMap ( Bitmap Width Height FileName:FilePath Color:BackColor )
 		),
-		/*@<BitMap>*/ fn GetImage /*@<ImgTag>*/ Item /*@<Name>*/ Action /*@<Name | String>*/ tIcon /*@<Point2>*/ Size:[26, 26] = (
-			/*@<GUIDE>
-				Creates the value "Tag" of ((tIcon as string + Action as string + Size as string) as name).
+
+		fn GetImage Item Action tIcon Size:[26, 26] = (
+			/* Creates the value "Tag" of ((tIcon as string + Action as string + Size as string) as name).
 				Searches (Images)[1] array for an entry of "Tag" value, storing its number in "BitmapID" value.
 				If found, returns the BitMap from Images[2][BitmapID].
 				Otherwise:
@@ -479,15 +390,13 @@ if HiddenDOSCommand != undefined then (
 			Tags = Images[1],
 			BitmapID = ( FindItem Tags Tag ),
 			Result
-			if BitmapID == 0 then (
+			if ( BitmapID == 0 ) then (
 				local	FilePath = ( Append ( ( BitmapPath as String ) + ( ImageName as String ) ) ( ImageExt as String ) )
 				if ( DoesFileExist FilePath ) then (
 					Result = ( OpenBitmap FilePath )
 					local	SX = Size.x,
 					SY = Size.y
-					if
-					Result.Width != SX or
-					Result.Height != SY
+					if ( Result.Width != SX or Result.Height != SY )
 					then (
 						Result = ( ResizeBitmap Result Size )
 						Item.Width = SX
@@ -501,31 +410,29 @@ if HiddenDOSCommand != undefined then (
 			Result = Images[2][BitmapID]
 			Result
 		),
-		/*@<BitMap | Undefined>*/ fn ImageControl /*@<ImgTag>*/ Item /*@<Name>*/ Action /*@<Name | String>*/ tIcon /*@<Point2>*/ Size:[26, 26] = (
-			/*@<GUIDE>
-				Sets (Item).Enabled property to true if (Action) is #Enable. Otherwise, to false.
+
+		fn ImageControl Item Action tIcon Size:[26, 26] = (
+			/* Sets (Item).Enabled property to true if (Action) is #Enable. Otherwise, to false.
 				If (Action) is #Null, sets (Item).BitMap to undefined. Otherwise, to the result of calling (GetImage) function with all the same arguments.
 			
 				Returns (Item).BitMap
 			*/
 			Item.Enabled = (
-				if Action == #Enable then
-				true
-				else
-				false
+				if ( Action == #Enable ) then (
+					true
+				) else ( false )
 			)
 			Item.BitMap = (
-				if Action != #Null then
-				GetImage Item Action tIcon Size:Size
+				if ( Action != #Null ) then ( GetImage Item Action tIcon Size:Size )
 			)
 		),
+
 		fn Check = (
-			if not Colour.Check() then
-			throw "\n\nCan't load colors! Please, update your .NET framework and restart 3Ds MAX"
-			if not Font.Check() then
-			throw "\n\nCan't load fonts! Please, install these:\n\nSegoe UI\nSegoe UI Light\nSegoe UI SemiBold\n\nand restart 3Ds MAX"
+			if ( not Colour.Check() ) then ( throw "\n\nCan't load colors! Please, update your .NET framework and restart 3Ds MAX" )
+			if ( not Font.Check() ) then ( throw "\n\nCan't load fonts! Please, install these:\n\nSegoe UI\nSegoe UI Light\nSegoe UI SemiBold\n\nand restart 3Ds MAX" )
 			true
 		),
+
 		fn Init GIMS = (
 			try (
 				local	SetLifetimeController = GIMS.SetLifetimeController
@@ -577,9 +484,7 @@ if HiddenDOSCommand != undefined then (
 						)
 					)
 				)
-			) catch (
-				messageBox ( "Line: 661 - Exception: " + GetCurrentException() ) title:"GIMS Error:" beep:true
-			)
+			) catch ( messageBox ( "Line: 661 - Exception: " + GetCurrentException() ) title:"GIMS Error:" beep:true )
 			true
 		)
 	)
