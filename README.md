@@ -34,7 +34,18 @@ I won't promise any new feature! This is a fun project, I'm just trying to help 
 
 <br>
 
+### - Stable
+
 1. Download the latest [release](https://github.com/cosmitir/VIMS-Evo/releases/latest/).
+2. Drag the `scripts` folder to your 3ds Max directory. ( Default: "C: \ Program Files \ Autodesk \ 3ds Max XXXX \", where XXXX stands for the version... i.e.: 2022 )
+3. Drag the `GIMS` folder to Local AppData folder. ( Win + R > %localappdata% )
+4. Get `materialfx.dat` and `materials.dat` with help of [CodeWalker](https://github.com/dexyfex/CodeWalker) or OpenIV.
+   1. Paste those files in `%localappdata%\GIMS\MaterialData\`.
+5. Startup 3ds Max. Enjoy.
+
+### - UnStable ( WARNING: This version isn't for daily use, please report any issue/bug you find! )
+
+1. Clone the repository.
 2. Drag the `scripts` folder to your 3ds Max directory. ( Default: "C: \ Program Files \ Autodesk \ 3ds Max XXXX \", where XXXX stands for the version... i.e.: 2022 )
 3. Drag the `GIMS` folder to Local AppData folder. ( Win + R > %localappdata% )
 4. Get `materialfx.dat` and `materials.dat` with help of [CodeWalker](https://github.com/dexyfex/CodeWalker) or OpenIV.
