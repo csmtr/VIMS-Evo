@@ -43,7 +43,7 @@ I won't promise any new feature! This is a fun project, I'm just trying to help 
    1. Paste those files in `%localappdata%\GIMS\MaterialData\`.
 5. Startup 3ds Max. Enjoy.
 
-### - UnStable ( WARNING: This version isn't for daily use, please report any issue/bug you find! )
+### - UnStable ( WARNING: The version from this method isn't for daily use, please report any issue/bug you find! )
 
 1. Clone the repository.
 2. Drag the `scripts` folder to your 3ds Max directory. ( Default: "C: \ Program Files \ Autodesk \ 3ds Max XXXX \", where XXXX stands for the version... i.e.: 2022 )
